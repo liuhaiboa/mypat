@@ -1,0 +1,80 @@
+<html>
+<head>
+	<TITLE></TITLE>
+	<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+
+<script src="../js/jquery-3.1.1.min.js" type="text/javascript">
+
+</script>
+	<script type="text/javascript" src="../js/top.js">
+	</script>
+	<script src="../js/tojson.js">
+	</script>
+
+	<script type="text/javascript">
+		var LOGIN_URL="http://localhost:8080/account/login";
+		$(function(){
+			$("#btn").click(function(){
+				var json=JSON.stringify($("#form1").serializeObject());
+
+				$.ajax({
+				url:LOGIN_URL,
+				dataType:"json",
+				data:json,
+				type:"post",
+				contentType:"application/json",
+				statusCode:{
+					200:function(data){
+
+					}
+				}
+			});
+
+		});
+		});
+
+
+	</script>
+
+</head>
+<body>
+<div id="top">
+
+</div>
+
+
+<form id="form1">
+	<table align="center" border="0">
+		<tr>
+			<td colspan="2">
+				
+				<br />
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			
+			<td>
+				用户名：<input type="tect" name="username" id="username">
+			</td>
+		</tr>
+		<tr>
+			
+			<td>
+				密&nbsp;&nbsp;&nbsp;码：<input type="tect" name="password" id="password">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="image" id="btn" border="0" src="../images/button_submit.gif" />
+				<a href="register.html"><img border="0"
+											 src="../images/button_register_now.gif" />
+				</a>
+			</td>
+
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>
